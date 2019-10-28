@@ -12,9 +12,6 @@ const IndexPage = () => {
       />
       <h1>Home page</h1>
       <h2>I'm Patricia living in MNT VW</h2>
-      <p>
-        Need a developer? <Link to="/contact">Contact me.</Link>
-      </p>
     </Layout>
   );
 };

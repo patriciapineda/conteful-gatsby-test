@@ -39,7 +39,7 @@ query($slug: String!) {
 `
 
 const Blog = ({data}) => {
-    const {title, publishedDate, body} = data.contentfulBlogPost;
+    const {title, publishedDate, introduction} = data.contentfulBlogPost;
     const options = {
         renderNode: {
             "embedded-asset-block": (node) => {
@@ -60,7 +60,7 @@ const Blog = ({data}) => {
             <h1>{title}</h1>
             <p>{publishedDate}</p>
             <div>
-                {documentToReactComponents(body.json, options)}
+                {documentToReactComponents(introduction.json, options)}
             </div>
         </Layout>
     )

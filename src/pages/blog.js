@@ -18,9 +18,9 @@ const BlogPage = () => {
             }){
             edges {
                 node {
-                    title
-                    slug
-                    publishedDate(formatString: "MMMM Do, YYYY")
+                        title
+                        slug
+                        publishedDate(formatString: "MMMM Do, YYYY")
                     }
                 }
             }

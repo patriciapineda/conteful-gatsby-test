@@ -27,18 +27,17 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: Create enviroments
-      run: add contentful env
-      env:
-        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+        node-version: ${{ matrix.node-version }}        
     - name: Yarn Install
       run: |
         yarn install
     - name: Production Build
       run: |
         yarn build
+      env: 
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+        NODE_ENV: production
     - name: Unit Tests
       run: |
         yarn test

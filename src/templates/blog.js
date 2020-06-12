@@ -62,6 +62,7 @@ const Blog = ({data}) => {
             <div>
                 {documentToReactComponents(introduction.json, options)}
             </div>
+            <p>{publishedDate}</p>
         </Layout>
     )
 }

@@ -28,15 +28,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Create enviroments
+      run: add contentful env
+      env:
+        CONTENTFUL_SPACE_ID: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
+        
     - name: Yarn Install
       run: |
         yarn install
     - name: Production Build
       run: |
         yarn build
-#     - name: Unit Tests
-#       run: |
-#         yarn test
+    - name: Unit Tests
+      run: |
+        yarn test
     - name: Deploy to AWS S3 Bucket
       uses: jakejarvis/s3-sync-action@master
       with:

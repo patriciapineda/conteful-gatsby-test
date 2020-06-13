@@ -15,7 +15,7 @@ const Footer = () => {
     `);
     return (
         <footer className={FooterStyles.footer}>
-            {queryData.site.siteMetadata.author} | 2019
+            {queryData.site.siteMetadata.author} | 2020
         </footer>
     )
 }
